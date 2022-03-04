@@ -1,25 +1,14 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { FrontPage } from "./components/frontPage";
+import { QuestionComponent } from "./components/questionPage";
 
-export function QuestionPage() {
+export function Application() {
   return (
-    <div>
-      <h1>Question Page</h1>
-    </div>
-  );
-}
-
-export function FrontPage() {
-  return (
-    <div>
-      <h1>Quiz Application</h1>
-    </div>
-  );
-}
-
-export function AnswerPage() {
-  return (
-    <div>
-      <h1>Answer Page</h1>
-    </div>
+    <Routes>
+      <Route path={"/"} element={<FrontPage />} />
+      <Route path={"/question"} element={<QuestionComponent />} />
+      <Route path={"*"} element={<h1>Not found</h1>} />
+    </Routes>
   );
 }
